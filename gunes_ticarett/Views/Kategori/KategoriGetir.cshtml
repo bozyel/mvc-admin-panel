@@ -1,0 +1,20 @@
+﻿@model gunes_ticarett.Models.Entity.tbl_kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("guncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group" >
+        @Html.LabelFor(m=>m.kategori_id)
+        @Html.TextBoxFor(m=>m.kategori_id,new {@class="form-control "})
+        <br />
+        @Html.LabelFor(m=>m.kategori_ad)
+        @Html.TextBoxFor(m=>m.kategori_ad,new  {@class="form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning" >KATEGORİ GÜNCELLE</button>
+    </div>
+}

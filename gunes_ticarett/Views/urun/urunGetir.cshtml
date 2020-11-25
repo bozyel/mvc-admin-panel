@@ -1,0 +1,32 @@
+﻿@model gunes_ticarett.Models.Entity.tbl_urunler
+@{
+    ViewBag.Title = "urunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "urun", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.urun_id)
+    @Html.TextBoxFor(m => m.urun_id, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.urun_ad)
+    @Html.TextBoxFor(m => m.urun_ad, new { @class = "form-control" }) 
+    <br />
+    @Html.LabelFor(m => m.urun_marka)
+    @Html.TextBoxFor(m => m.urun_marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.urun_kategori)
+    @Html.TextBoxFor(m => m.urun_kategori, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.urun_fiyat)
+    @Html.TextBoxFor(m => m.urun_fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.urun_stok)
+    @Html.TextBoxFor(m => m.urun_stok, new { @class = "form-control" })
+</div>
+<div>
+    <button class="btn btn-warning ">KATEGORİ GÜNCELLE</button>
+</div>
+}
+

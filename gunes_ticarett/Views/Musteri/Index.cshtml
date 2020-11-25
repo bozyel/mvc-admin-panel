@@ -1,0 +1,29 @@
+﻿@using gunes_ticarett.Models.Entity
+@model List<tbl_musteri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered" >
+    <tr>
+        <th>MÜŞTERİ İD</th>
+        <th>MÜŞTERİ AD</th>
+        <th>MÜŞTERİ SOYAD</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var mstr in Model)
+        {
+            <tr>
+                <td>@mstr.musteri_id</td>
+                <td>@mstr.musteri_ad</td>
+                <td>@mstr.musteri_soyad</td>
+                <td><a href="/Musteri/sil/@mstr.musteri_id"class="btn btn-danger">SİL</a></td>
+                <td><a href="/Musteri/MusteriGetir//@mstr.musteri_id" class="btn btn-success" >GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Musteri/YeniMusteri/" class="btn btn-primary ">YENİ MÜŞTERİ EKLE</a>

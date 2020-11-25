@@ -1,0 +1,36 @@
+﻿@using gunes_ticarett.Models.Entity
+@model List<tbl_urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered "  >
+    <tr>
+        <th>ÜRÜN İD</th>
+        <th>ÜRÜN AD</th>
+        <th>MARKA</th>
+        <th>KATEGORİ</th>
+        <th>FİYAT</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var urn in Model)
+        {
+            <tr>
+                <td>@urn.urun_id</td>
+                <td>@urn.urun_ad</td>
+                <td>@urn.urun_marka</td>
+                <td>@urn.tbl_kategori.kategori_ad</td>
+                <td>@urn.urun_fiyat</td>
+                <td>@urn.urun_stok</td>
+                <td><a href="/urun/sil/@urn.urun_id" class="btn btn-danger" >SİL</a></td>
+                <td><a href="/urun/urunGetir/@urn.urun_id" class="btn btn-success" >GÜNCELLE</a></td>
+
+            </tr>     
+        }
+    </tbody>
+</table>
+<a href="/urun/yeniurun/" class="btn btn-primary ">YENİ ÜRÜN EKLE</a>

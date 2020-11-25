@@ -1,0 +1,21 @@
+﻿@model gunes_ticarett.Models.Entity.tbl_kategori
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*<div>
+        <label>KATEGORİ ADI</label>
+        <input type="text"class="form-control" name="kategori_ad" />
+    </div>*@
+    <div>
+        <label>KATEGORİ AD</label>
+        @Html.TextAreaFor(m => m.kategori_ad, new {@class="Form-control" } )
+        @Html.ValidationMessageFor(m => m.kategori_ad, "", new { System="color:red"} )
+    </div>
+    <div style="margin-top:15px" >
+        <button class="btn btn-info " >KATEGORİ EKLE  </button>
+   
+    </div>
+</form>

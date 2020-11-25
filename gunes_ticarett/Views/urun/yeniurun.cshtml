@@ -1,0 +1,31 @@
+﻿@model gunes_ticarett.Models.Entity.tbl_urunler
+@{
+    ViewBag.Title = "yeniurun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>ÜRÜN ADI</label>
+        <input type="text" name="urun_ad" class="form-control" />
+    </div>
+    <div>
+        <label>MARKA</label>
+        <input type="text" name="urun_marka" class="form-control" />
+    </div>
+    <div>
+        <label>KATEGORİ</label>
+        @Html.DropDownListFor(m => m.tbl_kategori.kategori_id, (List<SelectListItem>)ViewBag.dgr ,new {@class="form-control"})
+    </div>
+    <div>
+        <label>FİYAT</label>
+        <input type="text" name="urun_fiyat" class="form-control" />
+    </div>
+    <div>
+        <label>STOK</label>
+        <input type="text" name="urun_stok" class="form-control" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" >ÜRÜN EKLE</button>
+    </div>
+</form>
